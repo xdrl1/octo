@@ -1,0 +1,588 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Xilinx Kria KV260 &#8212; BB-KI @BGD</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'board/2_kv260';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="3_zcu102.html" />
+    <link rel="prev" title="Host Machine Setup" href="1_host.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">BB-KI @BGD</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    BB-KI activities in BGD
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">BB-KI Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../proj/evaluation.html">Evaluation sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proj/teaching.html">Teaching activities in BGD</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OERs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../oers/Model_Pruning_Demo.html">Model Pruning Demo using MNIST and a toy CNN model</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">FPGA Integration</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0_overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_host.html">Host Machine Setup</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Xilinx Kria KV260</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Demonstrator</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../demo/bird.html">Bird detection demonstrator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo/hand.html">Hand</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/board/2_kv260.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Xilinx Kria KV260</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specifications">Specifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-accessories">Recommended Accessories</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#os-installation">OS Installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ubuntu">Ubuntu</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#petalinux">PetaLinux</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#firmware-update">Firmware Update</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-a-pre-built-app-from-xilinx">Run a pre-built APP from Xilinx</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="xilinx-kria-kv260">
+<h1>Xilinx Kria KV260<a class="headerlink" href="#xilinx-kria-kv260" title="Link to this heading">#</a></h1>
+<p>The AMD Xilinx® Kria™ KV260 Vision AI Starter Kit (hereinafter to be referred as KV260) is a Field Programmable Gate Array (FPGA) evaluation platform particularly designed for computer vision tasks, consisted of a Zynq™ UltraScale+™ MPSoC based K26 system-on-module (SOM), a carrier card providing connections to peripheral equipments, and an air cooling radiator. Tutorials in this course will use KV260 as target boards.</p>
+<p><img alt=" Xilinx" src="../media/image/kv260_board.JPG" /></p>
+<p>© Xilinx</p>
+<section id="specifications">
+<h2>Specifications<a class="headerlink" href="#specifications" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>The detailed data sheet of KV260 could be found <a class="reference external" href="https://docs.xilinx.com/r/en-US/ds986-kv260-starter-kit/Summary">here</a>.</p>
+</div></blockquote>
+<p>The core of KV260 is a Zynq™ UltraScale+™ MPSoC based K26 SOM, containing quad-core Arm® Cortex®-A53 MPCore™ (up to 1.3GHz) and dual-core Arm® Cortex®-R5F MPCore (up to 533MHz). Despite these obscure names, their low clock frequencies partly reflect their poor performances. A more intuitive example is Qualcomm® Snapdragon™ 625 consisted of 8x Arm® Cortex®-A53 cores, which is usually used by midrange smartphones back to 2016. Generally, computational capabilities of these edge devices are largely limited by constrained power supply due to battery life concerns or save costs. Therefore, deploying AI tasks involving enormous amount of computation onto edge devices is non-trivial, revealing the motivation of this course.</p>
+</section>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
+<p>This section will introduce how to setup a KV260 board from scratch. In most cases, both KV260 and its <a class="reference external" href="https://www.xilinx.com/products/som/kria/kv260-vision-starter-kit/basic-accessory-pack.html">basic accessory pack</a> are sold in a bundle (as the power supply (12V, 3A) and a compatible camera module (AR1335) are within the <em>basic accessory pack</em>).</p>
+<section id="recommended-accessories">
+<h3>Recommended Accessories<a class="headerlink" href="#recommended-accessories" title="Link to this heading">#</a></h3>
+<p>Except for KV260, a camera module and a power cable, following accessories are also essential for setup.</p>
+<ol class="arabic">
+<li><p>keyboard and mouse (USB/2.4G wireless).</p></li>
+<li><p>fast MicroSD card (16GB or above, 64GB recommended, <a class="reference external" href="https://www.westerndigital.com/de-de/products/memory-cards/sandisk-extreme-pro-uhs-i-microsd#SDSQXCU-064G-GN6MA">an example</a>). Note that a MicroSD card adapter may also be needed for flashing OS via PC.</p></li>
+<li><p>HDMI or DP cable connecting KV260 and a monitor.</p></li>
+<li><p>Ethernet cable for network connection.</p></li>
+<li><p>(optional) a USB camera if AR1335 cannot meet certain requirements (Logitech BRIO is <a class="reference external" href="https://xilinx.github.io/Vitis-AI/3.0/html/docs/quickstart/mpsoc.html#setup-the-target">recommended by Xilinx</a>, as it can <em>stream RAW video at higher resolutions than most low-cost webcams</em>).</p></li>
+<li><p>(optional) Micro USB cable if UART communication preferred.</p></li>
+<li><p>(optional) 3D-printed stand (<a class="reference external" href="https://www.thingiverse.com/thing:4886199">file</a>, <a class="reference external" href="https://support.xilinx.com/s/question/0D52E00006hpR6wSAE/kv260-starter-kit-3d-printed-holder?language=en_US">discussion</a>)</p>
+<p><img alt=" Xilinx" src="../media/image/kv260_stand.JPG" /></p>
+<p>© <a class="reference external" href="https://www.thingiverse.com/quentonh/designs">quentonh</a></p>
+</li>
+</ol>
+</section>
+<section id="os-installation">
+<h3>OS Installation<a class="headerlink" href="#os-installation" title="Link to this heading">#</a></h3>
+<p>There are two options of OS that can be installed on KV260:</p>
+<ol class="arabic simple">
+<li><p><strong>Ubuntu Desktop 22.04/20.04 LTS</strong>:</p>
+<ul class="simple">
+<li><p>the same GUI as normal Ubuntu.</p></li>
+<li><p>more manual settings required.</p></li>
+</ul>
+</li>
+<li><p><strong>PetaLinux</strong>:</p>
+<ul class="simple">
+<li><p>fundamental GUI.</p></li>
+<li><p>with out-of-the-box Vitis AI (DPU) support, thus easier to use.</p></li>
+</ul>
+</li>
+</ol>
+<p>Installation steps for each OS are given below.</p>
+<section id="ubuntu">
+<h4>Ubuntu<a class="headerlink" href="#ubuntu" title="Link to this heading">#</a></h4>
+<p>There are two options provided: 22.04 LTS and 20.04 LTS. Here, 22.04 LTS is chosen as an example, as the latest boot firmware only supports this version. On your own PC,</p>
+<ol class="arabic simple">
+<li><p>Download the official Ubuntu Desktop 22.04 LTS for Kria™ K26 SOMs <a class="reference external" href="https://ubuntu.com/download/amd">here</a>.</p></li>
+<li><p>Install an image flashing tool (e.g., <a class="reference external" href="https://etcher.balena.io/">balenaEtcher</a>, <a class="reference external" href="https://rufus.ie/">rufus</a>).</p></li>
+<li><p>Insert an microSD card into your PC (or connected by a microSD card writer)</p></li>
+<li><p>Follow the instructions of the image flashing tool to flash the Ubuntu image onto your microSD card.</p></li>
+<li><p>Wait until the flashing process finishes successfully, remove the microSD card from your PC and insert it into the microSD slot on KV260.</p></li>
+</ol>
+</section>
+<section id="petalinux">
+<h4>PetaLinux<a class="headerlink" href="#petalinux" title="Link to this heading">#</a></h4>
+<p>Basically the same as the steps for Ubuntu images. The only difference is the OS image. Download the official PetaLinux <a class="reference external" href="https://www.xilinx.com/member/forms/download/design-license-xef.html?filename=xilinx-kv260-dpu-v2022.2-v3.0.0.img.gz">here</a>. Note that an AMD account and a questionnaire to fill out are required here.</p>
+<p>After the microSD card flashed with desired OS is ready, connect everything in order as shown below to boot.</p>
+<p><img alt=" Xilinx" src="../media/image/kria_setup.PNG" /></p>
+<p>© Xilinx</p>
+</section>
+</section>
+<section id="firmware-update">
+<h3>Firmware Update<a class="headerlink" href="#firmware-update" title="Link to this heading">#</a></h3>
+<p>Typically, KV260 is not sold with the latest version of boot firmware (FW), which would prevent users from using the latest Ubuntu Desktop 22.04 and remain some bugs unfixed. Hence, it is necessary to check the boot FW version after booting.</p>
+<p>TODO</p>
+<blockquote>
+<div><p>Check <a class="reference external" href="https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/1641152513/Kria+SOMs+Starter+Kits#K26-Boot-Firmware-Updates">here</a> to find the latest firmware information from Xilinx</p>
+</div></blockquote>
+<p>There is also an official video providing a step-by-step guide to setup KV260 as shown below (© Xilinx).</p>
+<iframe src='//players.brightcove.net/17209957001/SywTPUVC_default/index.html?videoId=6249418456001' allowfullscreen frameborder=0 height="400"></iframe>
+</section>
+</section>
+<section id="run-a-pre-built-app-from-xilinx">
+<h2>Run a pre-built APP from Xilinx<a class="headerlink" href="#run-a-pre-built-app-from-xilinx" title="Link to this heading">#</a></h2>
+<p><em><strong>References</strong></em></p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.xilinx.com/products/som/kria/kv260-vision-starter-kit.html">Vision AI Starter Kit</a></p></li>
+<li><p><a class="reference external" href="https://www.xilinx.com/products/silicon-devices/soc/zynq-ultrascale-mpsoc.html#productTable">Zynq™ UltraScale+™ MPSoC, Ref. 1</a></p></li>
+<li><p><a class="reference external" href="https://docs.xilinx.com/v/u/en-US/zynq-ultrascale-plus-product-selection-guide">Zynq™ UltraScale+™ MPSoC, Ref. 2</a></p></li>
+<li><p><a class="reference external" href="https://www.qualcomm.com/products/mobile/snapdragon/smartphones/snapdragon-6-series-mobile-platforms/snapdragon-625-mobile-platform#Overview">Qualcomm® Snapdragon™ 625 Platform</a></p></li>
+<li><p><a class="reference external" href="https://www.xilinx.com/products/som/kria/kv260-vision-starter-kit/kv260-getting-started/getting-started.html">Getting Started with Kria™ KV260 Vision AI Starter Kit</a></p></li>
+<li><p><a class="reference external" href="https://xilinx.github.io/Vitis-AI/3.0/html/docs/quickstart/mpsoc.html#setup-the-target">Vitis™ AI 3.0 - Setup the Target</a></p></li>
+<li><p><a class="reference internal" href="#"><span class="xref myst">Getting Started with Certified Ubuntu 22.04 LTS for Xilinx Devices</span></a></p></li>
+</ol>
+<p>Last updated on 24.09.2023</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./board"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1_host.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Host Machine Setup</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="3_zcu102.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specifications">Specifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-accessories">Recommended Accessories</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#os-installation">OS Installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ubuntu">Ubuntu</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#petalinux">PetaLinux</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#firmware-update">Firmware Update</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-a-pre-built-app-from-xilinx">Run a pre-built APP from Xilinx</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By BGD
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
