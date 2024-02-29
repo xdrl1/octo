@@ -1,0 +1,28 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+
+parts:
+- caption: BB-KI Project
+  chapters:
+  - file: proj/evaluation.md
+  - file: proj/teaching
+  - file: proj/curriculum
+
+- caption: OERs
+  chapters:
+  - file: oers/Model_Pruning_Demo
+
+- caption: FPGA Integration
+  chapters:
+  - file: board/0_overview
+  - file: board/1_host
+  - file: board/2_kv260
+  - file: board/3_zcu102
+
+- caption: Demonstrator
+  chapters:
+  - file: demo/bird
+  - file: demo/hand
