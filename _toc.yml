@@ -7,9 +7,10 @@ root: intro
 parts:
 - caption: BB-KI Project
   chapters:
-  - file: proj/evaluation.md
-  - file: proj/teaching
   - file: proj/curriculum
+  - file: proj/evaluation
+  - file: proj/infrastructure
+  - file: proj/teaching
 
 - caption: OERs
   chapters:
