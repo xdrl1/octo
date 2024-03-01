@@ -6,5 +6,5 @@
 
 ## WiSe23/24
 
-- Lab Course Mobile Computer Vision
-- Engineering Project: bird detection demonstrator
+- Lab Course Mobile Computer Vision (MS 3.1)
+- Engineering Project: bird detection demonstrator (MS 2.6)
